@@ -1,0 +1,113 @@
+:root {
+    --bg-light: #f0f4f8;
+    --panel-bg: #ffffff;
+    --text-dark: #1e293b;
+    --stroke-dark: #1e293b;
+    
+    /* Palet Tema Waktu */
+    --pagi-color: #ffb703;   /* Kuning Cerah */
+    --siang-color: #00f0ff;  /* Cyan */
+    --sore-color: #ff477e;   /* Pink Maroon */
+    --malam-color: #7209b7;  /* Ungu Deep */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.5s ease;
+}
+
+.clock-container {
+    background-color: var(--panel-bg);
+    padding: 40px 30px;
+    border-radius: 28px;
+    border: 3px solid var(--stroke-dark);
+    box-shadow: 6px 6px 0px var(--stroke-dark);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+.clock-header h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.clock-header p {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #64748b;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tata Letak Flexbox Tampilan Jam */
+.clock-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-box {
+    background-color: #f8fafc;
+    border: 2px solid var(--stroke-dark);
+    border-radius: 16px;
+    padding: 15px 10px;
+    min-width: 85px;
+    box-shadow: 3px 3px 0px var(--stroke-dark);
+}
+
+/* Kotak detik dibuat berwarna pop khusus */
+.time-box-seconds {
+    background-color: var(--pagi-color);
+    border: 2px solid var(--stroke-dark);
+    border-radius: 16px;
+    padding: 15px 10px;
+    min-width: 85px;
+    box-shadow: 3px 3px 0px var(--stroke-dark);
+    transition: background-color 0.5s ease;
+}
+
+.time-box span, .time-box-seconds span {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.time-box small, .time-box-seconds small {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.5px;
+}
+
+.time-divider {
+    font-size: 2rem;
+    font-weight: 900;
+    animation: kedip 1s infinite;
+    user-select: none;
+}
+
+/* Animasi Titik Dua Berkedip */
+@keyframes kedip {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
